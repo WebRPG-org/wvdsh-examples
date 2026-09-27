@@ -330,15 +330,15 @@ gxc_set_player_status=(a,b)=>{gxc_player_info.forEach(d=>{d.playerId===a&&(d.sta
 content:a,src:b,rl:c},"*")},gxc_report_status=a=>{window.parent.postMessage({type:"report_status",status:a},"*")});"undefined"!=typeof window&&(wallpaper_update_config=k.cwrap("wallpaper_update_config",null,["string"]),wallpaper_reset_config=k.cwrap("wallpaper_reset_config",null,["string"]),wallpaper_update_subscription_data=k.cwrap("wallpaper_update_subscription_data",null,["string"]));
 
 function wavedash_js_init() {
-  if (window.WavedashJS && typeof window.WavedashJS.init === "function") {
-    window.WavedashJS.init({ debug: true });
+  if (window.Wavedash && typeof window.Wavedash.init === "function") {
+    window.Wavedash.init({ debug: true });
   }
   return 1.0;
 }
 
 function wavedash_js_update_progress(progress) {
-  if (window.WavedashJS && typeof window.WavedashJS.updateLoadProgressZeroToOne === "function") {
-    window.WavedashJS.updateLoadProgressZeroToOne(progress);
+  if (window.Wavedash && typeof window.Wavedash.updateLoadProgressZeroToOne === "function") {
+    window.Wavedash.updateLoadProgressZeroToOne(progress);
   }
   return 1.0;
 }

@@ -11,14 +11,14 @@ local M = {}
 
 function M.init()
   os.execute([[javascript:
-    window.WavedashJS && window.WavedashJS.init({ debug: true })
+    window.Wavedash && window.Wavedash.init({ debug: true })
   ]])
 end
 
 function M.update_load_progress(fraction)
   local clamped = math.max(0, math.min(1, fraction or 0))
   os.execute(string.format([[javascript:
-    window.WavedashJS && window.WavedashJS.updateLoadProgressZeroToOne(%f)
+    window.Wavedash && window.Wavedash.updateLoadProgressZeroToOne(%f)
   ]], clamped))
 end
 

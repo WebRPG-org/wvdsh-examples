@@ -1,13 +1,13 @@
 function wavedash_js_init() {
-  if (window.WavedashJS && typeof window.WavedashJS.init === "function") {
-    window.WavedashJS.init({ debug: true });
+  if (window.Wavedash && typeof window.Wavedash.init === "function") {
+    window.Wavedash.init({ debug: true });
   }
   return 1.0;
 }
 
 function wavedash_js_update_progress(progress) {
-  if (window.WavedashJS && typeof window.WavedashJS.updateLoadProgressZeroToOne === "function") {
-    window.WavedashJS.updateLoadProgressZeroToOne(progress);
+  if (window.Wavedash && typeof window.Wavedash.updateLoadProgressZeroToOne === "function") {
+    window.Wavedash.updateLoadProgressZeroToOne(progress);
   }
   return 1.0;
 }
