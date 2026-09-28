@@ -3,7 +3,7 @@ import StartGame from './game/main';
 
 document.addEventListener('DOMContentLoaded', async () => {
 
-    // No async assets — staged ramp: Phaser booting (0.5), game ready via postBoot (1→init)
+    // Phaser booting; the Game scene calls init() once its loader completes.
     Wavedash.updateLoadProgressZeroToOne(0.5);
     StartGame('game-container');
 

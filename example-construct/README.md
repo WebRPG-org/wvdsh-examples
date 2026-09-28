@@ -16,3 +16,7 @@ A minimal Construct 3 Pong game on Wavedash.
 ```
 wavedash dev
 ```
+
+## Load-progress shim
+
+The committed `build/index.html` wraps `fetch` to stream Construct's asset downloads into `Wavedash.updateLoadProgressZeroToOne`. A fresh export from Construct doesn't include it — re-apply it after exporting, or the loading bar jumps straight to done (the game still initializes).

@@ -6,9 +6,9 @@ Small, runnable examples showing how to integrate Wavedash across different engi
 
 - `example-babylonjs`: Babylon.js pong demo that initializes the SDK, updates loading progress, releases deferred events when ready, and then starts gameplay.
 - `example-bevy`: Bevy pong demo that initializes the SDK from Rust, updates loading progress, and then starts gameplay.
-- `example-c`: Pure C and WebAssembly pong demo that initializes the SDK from C, updates loading progress, releases deferred events when ready, and then starts gameplay.
-- `example-cpp`: C++ and WebAssembly pong demo that initializes the SDK from C++, updates loading progress, releases deferred events when ready, and then starts gameplay.
-- `example-csharp`: C# and WebAssembly pong demo that initializes the SDK from C# via NativeAOT, updates loading progress, releases deferred events when ready, and then starts gameplay.
+- `example-c`: Pure C and WebAssembly pong demo that initializes the SDK from C, updates loading progress, and then starts gameplay.
+- `example-cpp`: C++ and WebAssembly pong demo that initializes the SDK from C++, updates loading progress, and then starts gameplay.
+- `example-csharp`: C# and WebAssembly pong demo that initializes the SDK from C# via `[JSImport]`/`[JSExport]` interop on the .NET WebAssembly runtime, updates loading progress, and then starts gameplay.
 - `example-defold`: Defold pong demo that initializes the SDK, updates loading progress, and then starts gameplay.
 - `example-ebiten`: Ebiten pong demo compiled to WebAssembly, initializes the SDK from Go through `syscall/js`, and then starts gameplay.
 - `example-excalibur`: Excalibur.js pong demo that loads the engine from a CDN via ESM — no build step — uses an AI opponent, and initializes the SDK from a module entry.

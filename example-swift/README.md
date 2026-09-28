@@ -20,7 +20,7 @@ Replace `game_id` in [`wavedash.toml`](./wavedash.toml) with your Wavedash game 
 ```
 swift package --swift-sdk swift-6.3-RELEASE_wasm js -c release
 cp -R .build/plugins/PackageToJS/outputs/Package/. dist/
-cp Public/index.html dist/
+cp Public/index.html Public/index.js dist/
 wavedash dev
 ```
 

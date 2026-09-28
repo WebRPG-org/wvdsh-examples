@@ -2,7 +2,7 @@
 
 A minimal Bevy Pong game on Wavedash, compiled to WebAssembly via Trunk.
 
-[See it live](https://wavedash.com/playtest/bevy-example/b1b9c1bc-601d-40ab-9f25-3567eb6ddbab)
+[See it live](https://wavedash.com/playtest/bevy-example/970c0a6e-ee84-48ee-b4f2-0a4ca8f14a9a)
 
 ## Prerequisites
 
@@ -19,3 +19,7 @@ cargo install trunk
 trunk build --release --public-url ./
 wavedash dev
 ```
+
+## Load-progress shim
+
+Trunk regenerates `dist/index.html` from the stock `index.html`, so after `trunk build` re-apply the module script at the top of the committed `dist/index.html` (it streams the `.wasm` download into `Wavedash.updateLoadProgressZeroToOne`). Without it the game still initializes; the loading bar just jumps to done.

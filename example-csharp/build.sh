@@ -27,7 +27,8 @@ if [ ! -d "$APP_BUNDLE/_framework" ]; then
   printf '%s\n' "AppBundle/_framework not found after dotnet publish." >&2
   printf '%s\n' "" >&2
   printf '%s\n' "Ensure the wasm-tools workload is installed:" >&2
-  printf '%s\n' "  dotnet workload install wasm-tools-net9" >&2
+  printf '%s\n' "  dotnet workload install wasm-tools        # .NET 9 SDK" >&2
+  printf '%s\n' "  dotnet workload install wasm-tools-net9   # .NET 10 SDK" >&2
   exit 1
 fi
 

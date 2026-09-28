@@ -12,7 +12,8 @@ A minimal C# Pong game on Wavedash, compiled to WebAssembly via the .NET WASM ru
 The first time you build, install the .NET WASM build tools workload:
 
 ```
-dotnet workload install wasm-tools-net9
+dotnet workload install wasm-tools        # .NET 9 SDK
+dotnet workload install wasm-tools-net9   # .NET 10 SDK (building this net9.0 project)
 ```
 
 Then replace `game_id` in [`wavedash.toml`](./wavedash.toml) with your Wavedash game ID and run:

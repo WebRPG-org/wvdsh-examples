@@ -21,3 +21,7 @@ Replace `game_id` in [`wavedash.toml`](./wavedash.toml) with your Wavedash game 
    mv ~/Desktop/example-solar2d.html5/* build/
    ```
 4. `wavedash dev`
+
+## Load-progress shim
+
+The committed `build/index.html` adds an `xml.onprogress` hook that forwards the `.bin` download to `Wavedash.updateLoadProgressZeroToOne`. A fresh Solar2D export doesn't include it — re-apply it after exporting, or the loading bar jumps straight to done (the game still initializes).

@@ -26,3 +26,7 @@ Replace `game_id` in [`wavedash.toml`](./wavedash.toml) with your Wavedash game 
 ## Notes
 
 - A built `build/web-mobile` is committed so the example runs as-is; rebuild from Cocos Creator (Web Mobile template) after changing the project, before running `wavedash dev`.
+
+## Load-progress shim
+
+The committed `build/web-mobile/index.html` wraps `fetch` to stream Cocos's bundle downloads into `Wavedash.updateLoadProgressZeroToOne`. A fresh build doesn't include it — re-apply it after building (or move it into a `build-templates/web-mobile/index.ejs`), or the loading bar jumps straight to done (the game still initializes).
