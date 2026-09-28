@@ -16,6 +16,10 @@ Replace `game_id` in [`wavedash.toml`](./wavedash.toml) with your Wavedash game 
 
 > Defold reserves the top-level `build/` directory for its own build cache, so upload from `dist/` instead.
 
+## Wavedash integration
+
+The project depends on the [Wavedash Defold SDK](https://github.com/wvdsh/sdk-defold) (`dependencies#0` in `game.project`; run **Project → Fetch Libraries** in the editor, or let `./build.sh` resolve it). The extension forwards engine load progress to Wavedash automatically, and `main/pong.gui_script` calls `wavedash.init({ debug = true }, callback)` once the court is set up. Native extensions are compiled by Defold's build server, so the first build needs a network connection.
+
 Then:
 
 ```

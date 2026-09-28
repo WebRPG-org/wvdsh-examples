@@ -1,4 +1,3 @@
-local wavedash = require("main.wavedash")
 
 local WIN_SCORE = 7
 local FIELD_WIDTH = 16
@@ -388,8 +387,13 @@ function init(self)
     restart_match(self)
     sync_nodes(self)
 
-    wavedash.update_load_progress(1)
-    wavedash.init()
+    -- The sdk-defold extension (HTML5 only) exposes the global `wavedash` module.
+    -- Its engine template already forwards engine load progress to Wavedash.
+    if wavedash then
+        wavedash.init({ debug = true }, function(self, event, payload)
+            -- Handle wavedash.EVENT_* here if the game needs SDK events.
+        end)
+    end
 end
 
 function update(self, dt)
