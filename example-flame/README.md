@@ -4,7 +4,7 @@ A minimal Flame Pong game on Wavedash, compiled to JavaScript via Flutter's Canv
 
 ## Prerequisites
 
-- [Flutter](https://docs.flutter.dev/get-started/install) (stable channel, 3.22+)
+- [Flutter](https://docs.flutter.dev/get-started/install) (stable channel, 3.41+)
 - [Wavedash CLI](https://github.com/wvdsh/cli/releases)
 
 ## Quick start

@@ -5,9 +5,6 @@ import * as CANNON from "cannon-es";
 import Wavedash from "@wvdsh/sdk-js";
 Wavedash.updateLoadProgressZeroToOne(0.3);
 
-// Mirrors UGC_TYPE / UGC_VISIBILITY in wavedash convex/constants.
-const UGC_TYPE_COMMUNITY = 2;
-const UGC_VISIBILITY_PUBLIC = 0;
 
 // userfs path where the player's own save lives. Paths are user-relative —
 // the SDK prefixes `{gameCloudId}/userfs/{userId}/` before hitting R2.
@@ -433,14 +430,14 @@ async function refreshSaveMeta() {
     if (!listResponse || !listResponse.success) {
       throw new Error(listResponse?.message || "listRemoteDirectory failed");
     }
-    const entry = listResponse.data.find((f) => f.key === SAVE_PATH);
+    // Listed keys are absolute local paths ("/scenes/main.json").
+    const entry = listResponse.data.find((f) => f.key === "/" + SAVE_PATH);
     if (entry) {
       const when = new Date(entry.lastModified * 1000).toLocaleString();
       setStatus(saveStatusEl, `Save on server: ${formatBytes(entry.size)} · updated ${when}`);
     }
   } catch (err) {
-    // Non-fatal — the listRemoteDirectory call may 404 for an empty directory
-    // depending on platform behavior; don't surface that as an error.
+    // Non-fatal — the save metadata line is informational only.
     console.debug("[example-threejs-cloud] refreshSaveMeta", err);
   }
 }
@@ -465,10 +462,10 @@ async function publish() {
     if (!wrote) throw new Error("writeLocalFile failed");
 
     const response = await Wavedash.createUGCItem(
-      UGC_TYPE_COMMUNITY,
+      Wavedash.UGCType.COMMUNITY,
       undefined, // title
       undefined, // description
-      UGC_VISIBILITY_PUBLIC,
+      Wavedash.UGCVisibility.PUBLIC,
       SAVE_PATH
     );
     if (!response || !response.success) throw new Error(response?.message || "createUGCItem failed");

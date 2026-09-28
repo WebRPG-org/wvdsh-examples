@@ -18,13 +18,17 @@ wavedash dev
 
 ## Creating a .jsdos bundle
 
-A `.jsdos` file is a zip archive renamed to `.jsdos`. It must contain your DOS executable at its root:
+A `.jsdos` file is a zip archive renamed to `.jsdos`. It contains your DOS executable plus a `.jsdos/dosbox.conf` whose `[autoexec]` section runs it (this example's `build/game.jsdos` has exactly this layout):
 
 ```
 game.jsdos (zip)
-├── GAME.EXE
-└── (any supporting files your game needs)
+├── GAME.EXE               ; or .COM / .BAT — this example uses PONG.COM
+├── dosbox.conf            ; short root-level override (e.g. [cpu] cycles)
+└── .jsdos/
+    └── dosbox.conf        ; full DOSBox config with [autoexec] that runs your game
 ```
+
+See the [js-dos guide](https://docs.wavedash.com/engines/jsdos) for a minimal `dosbox.conf`.
 
 You can create one with any zip utility and rename the `.zip` extension to `.jsdos`.
 

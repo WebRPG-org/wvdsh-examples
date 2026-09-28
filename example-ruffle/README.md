@@ -1,6 +1,6 @@
 # Ruffle
 
-A Flash (SWF) game on Wavedash, played in the browser via the [Ruffle](https://ruffle.rs/) emulator. The platform automatically wraps your SWF in Ruffle handles load progress, and calls `Wavedash.loadComplete()` — no SDK code needed in your Flash game.
+A Flash (SWF) game on Wavedash, played in the browser via the [Ruffle](https://ruffle.rs/) emulator. The platform automatically wraps your SWF in Ruffle, handles load progress, and calls `Wavedash.loadComplete()` — no SDK code needed in your Flash game.
 
 ## Prerequisites
 
@@ -10,7 +10,7 @@ A Flash (SWF) game on Wavedash, played in the browser via the [Ruffle](https://r
 ## Quick start
 
 1. Copy your compiled `.swf` into `build/` and name it `game.swf` (or update `executable` in [`wavedash.toml`](./wavedash.toml) to match your filename).
-2. Update `[ruffle] version` in `wavedash.toml` to the Ruffle nightly version you want the platform to use. Check [ruffle.rs/builds](https://ruffle.rs/builds) for available nightlies.
+2. `[ruffle] version` in `wavedash.toml` must be an npm-style nightly (`0.2.0-nightly.YYYY.M.D`) dated 2026-02-24 or later. It is validated but doesn't select the runtime — the platform currently loads Ruffle `0.2.0-nightly.2026.2.24`.
 3. Replace `game_id` with your Wavedash game ID, then:
 
 ```
