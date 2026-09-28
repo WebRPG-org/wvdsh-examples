@@ -1,3 +1,4 @@
+import Wavedash from '@wvdsh/sdk-js';
 import { Scene } from 'phaser';
 
 const PADDLE_W = 14, PADDLE_H = 120, BALL_R = 10;
@@ -15,6 +16,17 @@ export class Game extends Scene
     constructor ()
     {
         super('Game');
+    }
+
+    preload ()
+    {
+        // Report load progress and call init() once this scene's loader is done.
+        // With nothing queued (this demo draws shapes), 'complete' fires right away.
+        this.load.on('progress', (p) => Wavedash.updateLoadProgressZeroToOne(p));
+        this.load.once('complete', () => {
+            Wavedash.updateLoadProgressZeroToOne(1);
+            Wavedash.init({ debug: true });
+        });
     }
 
     create ()

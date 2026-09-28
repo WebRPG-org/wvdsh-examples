@@ -7,7 +7,7 @@
 <script type="module">
 import init, * as bindings from './pong-72d00c459c86fd57.js';
 
-const sdk = await window.WavedashJS;
+const sdk = window.Wavedash;
 sdk.updateLoadProgressZeroToOne(0);
 
 // Stream the .wasm download so the SDK loading bar reflects real bytes
@@ -57,7 +57,7 @@ dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
       outline: none;
     }
   </style>
-<link rel="modulepreload" href="./pong-72d00c459c86fd57.js" crossorigin="anonymous" integrity="sha384-M5qTLD2xKLrZt+AY2jYdlry9WbiQDLyAddFVS6kxKCO+C5AI1NNZnJqzmvCqMNqk"><link rel="modulepreload" href="./snippets/pong-d1bf434ee30f5671/inline0.js" crossorigin="anonymous" integrity="sha384-yoOZaANlkNjU0FTOxzQfOkzmSgYDBvurvbPZL+fAx/HvDEGlWV63fuTcpcp6WkSp"><link rel="preload" href="./pong-72d00c459c86fd57_bg.wasm" crossorigin="anonymous" integrity="sha384-HfdeWpaYh4vQmF3UdJ3l6TGXjkzUHjo5Tdr8sSvZQhwHHlIOJlVbAv1mcPiBF00x" as="fetch" type="application/wasm"></head>
+<link rel="modulepreload" href="./pong-72d00c459c86fd57.js" crossorigin="anonymous" integrity="sha384-M5qTLD2xKLrZt+AY2jYdlry9WbiQDLyAddFVS6kxKCO+C5AI1NNZnJqzmvCqMNqk"><link rel="modulepreload" href="./snippets/pong-d1bf434ee30f5671/inline0.js" crossorigin="anonymous" integrity="sha384-EQbdpZpvVSh3lp6Gce7mWl+z5GkqfpzuX/jQqvZAeUwbaUSZPnLX0tnMTrV1G/Kd"><link rel="preload" href="./pong-72d00c459c86fd57_bg.wasm" crossorigin="anonymous" integrity="sha384-HfdeWpaYh4vQmF3UdJ3l6TGXjkzUHjo5Tdr8sSvZQhwHHlIOJlVbAv1mcPiBF00x" as="fetch" type="application/wasm"></head>
 
 <body>
 </body>

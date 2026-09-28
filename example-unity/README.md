@@ -10,7 +10,7 @@ A minimal Unity Pong game on Wavedash, using Netcode for GameObjects with the Wa
 ## Quick start
 
 1. Open the project in Unity.
-2. Add the Wavedash SDK package (`com.wavedash.sdk`) via **Window → Package Manager → Add package from git URL**: `https://github.com/wvdsh/sdk-unity.git`
+2. The Wavedash SDK package (`com.wavedash.sdk`) is already listed in `Packages/manifest.json`, pinned to a tested commit; Unity installs it when the project opens. To use it in your own project, add `https://github.com/wvdsh/sdk-unity.git` via **Window → Package Manager → Add package from git URL**.
 3. Build for **WebGL** with the output directory set to `Build/index/`.
 4. Replace `game_id` in [`wavedash.toml`](./wavedash.toml) with your Wavedash game ID.
 5. Run:

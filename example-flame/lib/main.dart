@@ -9,10 +9,10 @@ import 'package:flutter/services.dart';
 
 // --- Wavedash SDK bridge ---
 
-@JS('WavedashJS.init')
+@JS('Wavedash.init')
 external void _wavedashInit();
 
-@JS('WavedashJS.updateLoadProgressZeroToOne')
+@JS('Wavedash.updateLoadProgressZeroToOne')
 external void _wavedashUpdateProgress(double p);
 
 void wavedashInit() {

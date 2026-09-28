@@ -18,6 +18,7 @@ Small, runnable examples showing how to integrate Wavedash across different engi
 - `example-go`: Go and WebAssembly pong demo that owns the full browser stack via `syscall/js`, initializes the SDK, updates loading progress, and then starts gameplay.
 - `example-godot`: Godot 4 pong demo with local and online multiplayer modes — initializes the SDK from GDScript, browses and joins lobbies, and uses Wavedash P2P to sync paddle positions (channel 0, unreliable) and score events (channel 1, reliable), exported to HTML5.
 - `example-cocos`: Cocos Creator 3 pong demo whose `Pong` component moves paddle and ball Nodes each frame, initializes the SDK from TypeScript, and then starts gameplay.
+- `example-ctjs`: ct.js pong demo that reports load progress and calls `Wavedash.init()` from the room's OnRoomStart script, then starts gameplay.
 - `example-construct`: Construct 3 folder-project pong demo that initializes the SDK from Construct scripts, updates loading progress during startup, releases deferred events when the first playable state is ready, and then starts gameplay.
 - `example-gbstudio`: GB Studio 4 Game Boy game exported to HTML5 via the built-in binjgb emulator, with the Wavedash SDK init injected into the exported shell.
 - `example-gdevelop`: GDevelop 5 pong demo authored in `game.json` with a single JavaScript event driving input, physics, scoring, and a ShapePainter renderer, initializes the SDK on the first frame, and then starts gameplay.
@@ -33,6 +34,7 @@ Small, runnable examples showing how to integrate Wavedash across different engi
 - `example-love2d`: LOVE2D pong demo that packages a `.love` file for the standalone `love.js` player, initializes the SDK, updates loading progress, releases deferred events when the first playable frame is rendered, and then starts gameplay.
 - `example-melonjs`: melonJS pong demo loaded via ESM from unpkg — no build step — uses a tracking-AI opponent, renders a scoreboard in each half, and initializes the SDK from a module entry.
 - `example-phaser`: Phaser 3 pong demo that initializes the SDK, updates loading progress, releases deferred events when ready, and then starts gameplay.
+- `example-pico8`: PICO-8 platformer cart exported to HTML5; the web shell streams the cart runtime into the SDK loading bar and calls `Wavedash.init()` once it's fetched.
 - `example-pixi`: PixiJS pong demo that initializes the SDK, updates loading progress, and then starts gameplay.
 - `example-playcanvas`: PlayCanvas 3D pong demo that initializes the SDK, updates loading progress, and then starts gameplay.
 - `example-raylib`: raylib pong demo compiled to WebAssembly via Emscripten, initializes the SDK from C using `EM_JS` wrappers, and then starts gameplay.
@@ -42,6 +44,7 @@ Small, runnable examples showing how to integrate Wavedash across different engi
 - `example-rust`: Rust and WebAssembly pong demo that initializes the SDK from Rust, updates loading progress, releases deferred events when ready, and then starts gameplay.
 - `example-solar2d`: Solar2D pong demo exported to HTML5, initializes the SDK through a custom HTML template set in `build.settings`, and then starts gameplay.
 - `example-threejs`: Three.js pong demo with local and online multiplayer modes — initializes the SDK from JavaScript, browses and joins lobbies, and uses Wavedash P2P to sync paddle positions (channel 0, unreliable) and score events (channel 1, reliable).
+- `example-threejs-cicd`: `example-threejs` plus a GitHub Actions workflow that builds and runs `wavedash build push` on every push to `main`.
 - `example-threejs-cloud`: Three.js + cannon-es physics sandbox that exercises the **userfs** and **UGC** APIs end-to-end — click to drop primitives (auto-stacked via downward raycast), shift+click to remove. **Save / Load / Delete** use `uploadRemoteFile` / `downloadRemoteFile` / `deleteRemoteFile` for the player's own cloud save, plus `listRemoteDirectory` to surface its size/timestamp. **Publish / Update published / Unpublish** use `createUGCItem` / `updateUGCItem` / `deleteUGCItem` to share scenes as public UGC. **Import** pulls another player's scene via `downloadUGCItem` + `readLocalFile` into a scratch path so the local save is untouched.
 - `example-ts`: Pure TypeScript and Canvas 2D pong demo that initializes the SDK, updates loading progress, and then starts gameplay with no external game engine.
 - `example-unity`: Unity P2P pong demo that uses Netcode for GameObjects with the Wavedash transport, exported to WebGL.

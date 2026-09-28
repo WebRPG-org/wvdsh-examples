@@ -15,11 +15,9 @@ import {
 
 const { ccclass, property } = _decorator;
 
-declare global {
-    interface Window {
-        WavedashJS: any;
-    }
-}
+// Read the host-injected SDK without augmenting `Window`, so this compiles
+// whether or not @wvdsh/sdk-js (which types window.Wavedash) is installed.
+const getWavedash = () => (window as unknown as { Wavedash?: any }).Wavedash;
 
 // Arena
 const LEFT_WALL = -450;
@@ -62,17 +60,15 @@ export class Pong extends Component {
 
     start() {
         // Wavedash SDK init
-        (async () => {
+        const Wavedash = getWavedash();
+        if (Wavedash) {
             try {
-                const WavedashJS = await (window as any).WavedashJS;
-                if (WavedashJS) {
-                    WavedashJS.updateLoadProgressZeroToOne(1.0);
-                    WavedashJS.init({ debug: true });
-                }
+                Wavedash.updateLoadProgressZeroToOne(1.0);
+                Wavedash.init({ debug: true });
             } catch (e) {
                 console.warn('[wavedash] init failed:', e);
             }
-        })();
+        }
 
         // --- Diagnostic: dump scene/camera/sprite state ---
         const canvas = this.node.getComponent(Canvas);

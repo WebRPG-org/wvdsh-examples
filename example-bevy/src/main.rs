@@ -5,11 +5,11 @@ use bevy::{
 };
 use wasm_bindgen::prelude::*;
 
-// --- WavedashJS bridge ---
+// --- Wavedash SDK bridge ---
 
 #[wasm_bindgen(inline_js = "
-    export function wavedash_update_progress(p) { WavedashJS.updateLoadProgressZeroToOne(p); }
-    export function wavedash_init() { WavedashJS.init({ debug: true }); }
+    export function wavedash_update_progress(p) { window.Wavedash.updateLoadProgressZeroToOne(p); }
+    export function wavedash_init() { window.Wavedash.init({ debug: true }); }
 ")]
 extern "C" {
     fn wavedash_update_progress(p: f64);

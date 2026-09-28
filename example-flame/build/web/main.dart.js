@@ -22638,8 +22638,8 @@ A.fy.prototype={
 d_(){var s=0,r=A.B(t.H),q=this,p,o,n,m,l,k,j,i,h
 var $async$d_=A.C(function(a,b){if(a===1)return A.y(b,r)
 for(;;)switch(s){case 0:h=v.G
-h.WavedashJS.updateLoadProgressZeroToOne(1)
-h.WavedashJS.init()
+h.Wavedash.updateLoadProgressZeroToOne(1)
+h.Wavedash.init()
 h=q.p1
 p=new Float32Array(2)
 o=new A.K(p)

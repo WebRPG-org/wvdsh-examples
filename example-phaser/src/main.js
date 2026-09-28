@@ -5,6 +5,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // No async assets — staged ramp: Phaser booting (0.5), game ready via postBoot (1→init)
     Wavedash.updateLoadProgressZeroToOne(0.5);
-    StartGame('game-container', Wavedash);
+    StartGame('game-container');
 
 });
